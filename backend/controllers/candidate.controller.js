@@ -156,7 +156,6 @@ export const voteCandidate = async (req, res) => {
       return res.status(400).json({ message: "you have already voted" });
     }
 
-    //  candidate check
     const candidate = await Candidate.findById(candidateId);
     if (!candidate) {
       return res.status(404).json({ message: "candidate not  found" });
